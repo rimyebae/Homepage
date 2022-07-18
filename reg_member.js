@@ -6,7 +6,7 @@ var ipEmail;
 var ipBirth_y;
 var ipBirth_m;
 var ipBirth_d;
-var ipSex;
+var ipSexes;    // 주의
 var ipTel_1;
 var ipTel_2;
 var ipTel_3;
@@ -32,13 +32,15 @@ window.onload = function(){
     ipBirth_y=document.getElementById("birth_y");
     ipBirth_m=document.getElementById("birth_m");
     ipBirth_d=document.getElementById("birth_d");
-    ipSex=document.getElementsByName("sex");
     ipTel_1=document.getElementById("tel_1");
     ipTel_2=document.getElementById("tel_2");
     ipTel_3=document.getElementById("tel_3");
+
+    ipSexes=document.getElementsByName("sex");  // 주의
 }
 
 function check(){  
+
     id=ipId.value;
     pw=ipPw.value;
     pw_re=ipPw_re.value;
@@ -52,14 +54,35 @@ function check(){
     tel_2=ipTel_2.value;
     tel_3=ipTel_3.value;
 
+    for(var i=0;i<ipSexes.length;i++){
+        // ipSexes[i] 의 checked 멤버 변수에 해당 radio 가 체크된 상태면 true 가 리턴되므로 둘다 true 면 체크상태라는 뜻
+        if(ipSexes[i].checked == true){ 
+            sex = ipSexes[i].value; // 해당 라디오 버튼의 값을 변수에 저장
+        }
+    }
 
+    var userInfo = 
+        "id: "+id+"\n"
+        +"pw: "+pw+"\n"
+        +"pw_re: "+pw_re+"\n"
+        +"userName: "+userName+"\n"
+        +"email: "+email+"\n"
+        +"birth_y: "+birth_y+"\n"
+        +"birth_m: "+birth_m+"\n"
+        +"birth_d: "+birth_d+"\n"
+        +"tel_1: "+tel_1+"\n"
+        +"tel_2: "+tel_2+"\n"
+        +"tel_3: "+tel_3+"\n"
+        +"sex: "+sex ;
+    
+    alert(userInfo);
 
-    if(checkId() && checkPw() && checkPw_re()&&checkUserName()&&checkEmail()){
+    if(checkId() && checkPw() && checkPw_re()&&checkEqualPwAndPwRe()&&checkUserName()&&checkEmail()){
         alert("회원가입이 완료되었습니다.");
-        alert(id+pw+pw_re+userName+email+birth_y+birth_m+birth_d+tel_1+tel_2+tel_3);
     } else {
         alert("회원가입에 실패하였습니다.");
     }
+
 }
 
 function checkId(){
@@ -86,6 +109,16 @@ function checkPw_re(){
         return true;
     } else {
         console.log("no pwre");
+        return false;
+    }
+}
+function checkEqualPwAndPwRe(){
+    if(pw == pw_re){
+        console.log("ok 비밀번호 일치 O");
+        return true;
+    } else {
+        console.log("no 비밀번호 일치 X");
+        alert("비밀번호가 같지 않습니다.")
         return false;
     }
 }
