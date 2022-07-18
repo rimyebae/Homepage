@@ -6,8 +6,38 @@ body{
     background-color: rgb(150,180,208);
 }
 
+
+
+h2{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(245,246,228);
+    width: 400px;
+    height: 50px;
+    border : 3px solid rgb(239,229,178);
+    border-radius: 30px;
+    font-family: 'Poor Story', cursive;
+
+    
+}
+
+#form{
+    font-family: 'Poor Story', cursive;
+    background-color: rgb(245,246,228);
+    width: 500px;
+    height: 280px;
+    border : 3px solid rgb(239,229,178);
+    border-radius: 30px;
+    text-align: center;  
+    box-shadow: 5px 5px 5px;
+}
+
 #tel_1,#tel_2,#tel_3,#birth_y{
     width: 85px;
     height: 18px;
 }
 
+input{
+    margin-top: 5px;
+}

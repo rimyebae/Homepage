@@ -4,23 +4,27 @@
     <meta charset="UTF-8">
     <title>회원가입</title>
     <link rel="stylesheet" href="reg_member.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap" rel="stylesheet">
     <script src="reg_member.js"></script>
     
 </head>
 <body>
-    <div>
+    <div id="box">
+        <h2>📑회원정보를 입력하세요📑</h2>
         <form action="#" method="GET" id="form">
-            <input type="text" id="id" minlength="4" maxlength="12" required placeholder="id(4자리이상,12자리이하)">
+            ID : <input type="text" id="id" minlength="4" maxlength="12" required placeholder="id(4자리이상,12자리이하)">
             <br>
-            <input type="password" id="pw" minlength="4" maxlength="12" required placeholder="pw(4자리이상,12자리이하)">
+            PW : <input type="password" id="pw" minlength="4" maxlength="12" required placeholder="pw(4자리이상,12자리이하)">
             <br>
-            <input type="password" id="pw_re" minlength="4" maxlength="12" required placeholder="pw재입력">
+            ❕ : <input type="password" id="pw_re" minlength="4" maxlength="12" required placeholder="pw재입력">
             <br>
-            <input type="text" id="user_name" minlength="4" maxlength="12" required placeholder="이름">
+            NAME : <input type="text" id="user_name" minlength="4" maxlength="12" required placeholder="이름">
             <br>
-            <input type="email" id="email" minlength="4" maxlength="12" required placeholder="이메일">
+            E-MAIL : <input type="email" id="email" minlength="4" maxlength="12" required placeholder="이메일">
             <br>
-            <label for="birth_y">생년월일</label>
+            <label for="birth_y">BIRTH : </label><br>
             <input type="number" id="birth_y" value="1998" required>
             <select id="birth_m">
                 <option value="1">1</option>
@@ -68,12 +72,12 @@
                 <option value="29">29</option>
                 <option value="30">30</option>
                 <option value="31">31</option>
-            </select>
-            <h4>성별</h4>
+            </select><br>
+            GENDER : 
             <input type="radio" name="sex" value="M">남성
             <input type="radio" name="sex" value="G" checked>여성
             <br>
-            <label for="tel_1">전화번호</label>
+            <label for="tel_1">PHONE :</label>
             <!-- <input type="tel" name="phone" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" />             -->
             <input type="tel" id="tel_1" minlength="3" maxlength="3" value="010" required> -
             <input type="tel" id="tel_2" minlength="4" maxlength="4" required> -
